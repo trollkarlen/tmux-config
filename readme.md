@@ -317,6 +317,10 @@ The right part of status line consists of following components:
 
 You might want to hide status bar using `<prefix> C-s` keybinding.
 
+To fix issues with cpu status line on MacOS run this command to patch plugin(stdbuf chnaged name to gstdbuf on MacOS homebrew):
+``` bash
+gsed -E -e '/is_osx/,/elif/s/stdbuf/gstdbuf/' $HOME/.tmux/plugins/tmux-plugin-sysstat/scripts/cpu_collect.sh
+```
 
 Nested tmux sessions
 --------------------
